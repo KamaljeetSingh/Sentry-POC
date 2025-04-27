@@ -1,65 +1,54 @@
-# React Dummy Project
+# Sentry AI Monitoring POC
 
-This is a dummy React project created for demonstration purposes.
+This POC demonstrates how LLMs and GenAI can help monitor web applications better by providing a natural language interface to query Sentry error data.
 
-## Project Structure
+## Features
 
-```
-react-dummy-project
-├── src
-│   ├── App.js
-│   ├── index.js
-│   └── components
-├── public
-│   ├── index.html
-│   └── favicon.ico
-├── package.json
-└── README.md
-```
+- Natural language interface to query Sentry error data
+- Integration with existing React application
+- AI-powered interpretation of user queries
+- AI-formatted responses with relevant information
 
-## Getting Started
+## Setup Instructions
 
-To get started with this project, follow the instructions below.
-
-### Prerequisites
-
-Make sure you have Node.js and npm installed on your machine.
-
-### Installation
-
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```
-   cd react-dummy-project
-   ```
-3. Install the dependencies:
+1. Clone this repository
+2. Install dependencies:
    ```
    npm install
    ```
+3. Create a `.env` file based on `.env.template` and fill in your credentials:
+   - Sentry API token
+   - Sentry organization slug
+   - Sentry project slug
+   - OpenAI API key
 
-### Running the Application
+4. Run the development server:
+   ```
+   npm run dev
+   ```
 
-To run the application in development mode, use the following command:
-```
-npm start
-```
-This will start the development server and open the application in your default web browser.
+## Usage
 
-### Building for Production
+1. Open your application in the browser
+2. Click the "Open Error Monitor" button in the bottom right corner
+3. Ask questions about your application errors, such as:
+   - "What are the top errors from last week?"
+   - "Show me critical issues in the past 24 hours"
+   - "What's the most frequent error today?"
+   - "How many unresolved errors do we have?"
 
-To build the application for production, use:
-```
-npm run build
-```
-This will create an optimized build of the application in the `build` directory.
+## Architecture
 
-### Contributing
+- **Frontend**: React components for the chatbot interface
+- **Backend**: Express server that handles:
+  - Processing natural language queries using LLM
+  - Communicating with Sentry API
+  - Formatting responses using LLM
 
-Feel free to contribute to this project by submitting issues or pull requests.
+## Next Steps (Future Phases)
 
-### License
-
-This project is licensed under the MIT License.
+- Add authentication for multiple users
+- Enable direct linking to Sentry issues
+- Add visualization of error trends
+- Implement proactive alerts based on anomaly detection
+- Add ability to resolve/assign issues from the chatbot
